@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "van_helsingregular";
+  src: url("fonts/Van_Helsing/van_helsing-webfont.ttf") format("ttf"), url("fonts/Van_Helsing/van_helsing-webfont.woff2") format("woff2"), url("fonts/Van_Helsing/van_helsing-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "montserrat";
+  src: url("fonts/montserrat/montserrat-regular-webfont.ttf") format("ttf"), url("fonts/montserrat/montserrat-regular-webfont.woff") format("woff"), url("fonts/montserrat/montserrat-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: montserrat, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: #0d2143;
+}
+
+.loader {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #f0f1f6 url("../loader.gif") center fixed no-repeat;
+}
+
+@media (min-width: 320px) {
+  .rf-signup .block-1 {
+    min-height: 650px;
+    background: url("../images/signup_bg.jpg") center center no-repeat;
+    background-size: cover;
+  }
+  .rf-signup .block-1 .signup-block {
+    background-color: #fafafa;
+    margin: 20% 0;
+    border-radius: 5px;
+  }
+  .rf-signup .block-1 .signup-block .logo-blk {
+    padding: 10% 5%;
+  }
+  .rf-signup .block-1 .signup-block .logo-blk .rf-logo-signup {
+    width: 80%;
+  }
+  .rf-signup .block-1 .signup-block .form-fields {
+    padding-bottom: 10%;
+  }
+  .rf-signup .block-1 .signup-block .form-fields label {
+    width: 100%;
+    color: #0d2143;
+    margin-bottom: 20px;
+  }
+  .rf-signup .block-1 .signup-block .form-fields label input {
+    border-radius: 0;
+    height: 50px;
+  }
+  .rf-signup .block-1 .signup-block .form-fields label input:focus {
+    border: 1px solid #0d2143;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .rf-signup .block-1 .signup-block .form-fields button {
+    border-radius: 0;
+  }
+  .rf-signup .block-1 .signup-block .form-fields button.btn-outline-secondary {
+    border: 2px solid #0d2143;
+    font-weight: bold;
+    color: #0d2143;
+  }
+  .rf-signup .block-1 .signup-block .form-fields button.btn-outline-secondary:hover {
+    background-color: #0d2143;
+    color: #fafafa;
+  }
+  .rf-signup .block-1 .signup-block.rf-login {
+    margin-top: 35%;
+  }
+  .rf-signup .block-1.rf-login-alt {
+    background-image: url("../images/login-bg.jpg");
+  }
+  .rf-signup .block-2 {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rf-signup .block-1 {
+    min-height: 600px;
+  }
+  .rf-signup .block-1 .signup-block {
+    margin-top: 10%;
+    margin-left: 70%;
+    z-index: 2;
+  }
+  .rf-signup .block-1 .signup-block.rf-login {
+    margin-top: 10%;
+  }
+  .rf-signup .block-1.fp {
+    min-height: 650px !important;
+  }
+  .rf-signup .block-1.fp .signup-block.rf-login {
+    margin-top: 20%;
+  }
+  .rf-signup .block-2 {
+    display: block;
+    background-color: #0d2143;
+  }
+}
+/*# sourceMappingURL=rfsignup.css.map */

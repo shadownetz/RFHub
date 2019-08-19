@@ -1,0 +1,276 @@
+@import "partialstyle.scss";
+.rf-body {
+  @include mobile_320 {
+    background-color: get_bgcolor(primary);
+    min-height: 600px;
+    .rf-container {
+      background: linear-gradient(get_bgcolor(primary), rgb(251, 252, 253));
+    }
+    .rf-head-txt {
+      padding-top: 10%;
+      h2 {
+        font-weight: 700;
+        text-align: center;
+        font-size: 34px;
+      }
+      .rf-sub-head-txt {
+        padding-top: 5%;
+        p {
+          text-align: center;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+      .rf-head-buttons {
+        padding-top: 5%;
+        .buttons {
+          margin-bottom: 10px;
+          button,
+          a {
+            padding: 10px;
+            width: 60%;
+            color: get_textcolor(rf_white);
+          }
+          button.btn-outline-dark {
+            @include rf_default_button();
+          }
+          button.btn-outline-dark:hover,
+          button.btn-outline-dark:focus {
+            background: transparent;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+    .rf-head-img {
+      text-align: center;
+      padding-top: 10%;
+      background: url("../images/thumbnail-dates-and-pot.png") center bottom no-repeat;
+      background-size: 95%;
+      .responsive-rf-img {
+        max-width: 70% !important;
+      }
+    }
+    .rf-container-alt {
+      padding-top: 20%;
+      text-align: center;
+      h2 {
+        font-weight: bold;
+      }
+    }
+    .rf-container-2 {
+      padding-top: 20%;
+      background: #fff;
+      .head-txt {
+        text-align: center;
+        margin-bottom: 10%;
+        h3 {
+          font-weight: bold;
+          font-size: 30px;
+        }
+      }
+      .info-block {
+        padding-bottom: 10%;
+        .info-txt {
+          h5 {
+            font-weight: bold;
+          }
+          p {
+            color: rgb(137, 145, 170);
+          }
+        }
+      }
+      .info-display-img {
+        img {
+          width: 70%;
+        }
+      }
+    }
+    .rf-container-3 {
+      .rf-secure-panel {
+        text-align: left;
+        .rf-secure-box {
+          padding: 20px;
+          border-radius: 5px;
+          background: get_bgcolor(secondary);
+          box-shadow: 1px 1px 1px rgb(218, 219, 223), -1px 1px 1px rgb(218, 219, 223);
+          margin-bottom: 20px;
+          a {
+            color: get_textcolor(primary);
+            font-size: 0.8em;
+            font-weight: bold;
+          }
+          a:hover {
+            text-decoration: none;
+          }
+          .txt {
+            color: rgb(137, 145, 170);
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    .rf-container-4 {
+      background-color: get_bgcolor(secondary);
+      padding-bottom: 10%;
+      .rf-assure-txt {
+        padding-top: 10%;
+        h3,
+        p {
+          text-align: left;
+          margin-top: 10%;
+        }
+        h3 {
+          font-weight: bold;
+        }
+        .assure-btn {
+          padding: 10px;
+          border: 2px solid get_bgcolor(rf_blue);
+          background-color: transparent;
+          color: get_textcolor(primary);
+        }
+      }
+      .assure-underlay-block {
+        position: absolute;
+        height: 100%;
+        width: 40%;
+        background-color: #f3f6fb;
+        z-index: 1;
+      }
+      .assure-ov-blk {
+        position: relative;
+        margin: 10% 0;
+        z-index: 2;
+        width: 90%;
+      }
+    }
+    .rf-container-5 {
+      padding-top: 10%;
+      .contact-head-txt {
+        span {
+          color: get_textcolor(primary);
+        }
+        .contact-items {
+          text-align: left;
+          padding-bottom: 30px;
+          label {
+            width: 100%;
+            margin: 10px 0;
+            input,
+            textarea {
+              border-radius: 0;
+            }
+            input {
+              height: 50px;
+            }
+            input:focus,
+            textarea:focus {
+              box-shadow: none;
+              border: 1px solid get_textcolor(primary);
+            }
+          }
+          button[type="submit"] {
+            padding: 10px;
+            border-radius: 0;
+            font-weight: bold;
+          }
+        }
+      }
+      .contact-img {
+        display: none;
+      }
+    }
+  }
+  @include desktop {
+    .rf-container {
+      .rf-head-txt {
+        h2 {
+          text-align: left;
+          font-size: 50px;
+        }
+        .rf-sub-head-txt {
+          div:not(:last-child) {
+            border-right: 1px solid get_bgcolor(rf_blue);
+          }
+          p {
+            margin-bottom: 0;
+          }
+        }
+        .rf-head-buttons {
+          button,
+          a {
+            border-radius: 0;
+          }
+          button.rf-feedback:hover {
+            background-color: get_bgcolor(rf_blue);
+            color: get_textcolor(rf_white);
+          }
+        }
+      }
+    }
+    .rf-container-2 {
+      padding-top: 8%;
+
+      .head-txt {
+        margin-bottom: 7%;
+        h3 {
+          font-size: 40px;
+        }
+      }
+      .info-block {
+        padding: 3% 0 3% 30%;
+        .info-txt {
+          h5 {
+            font-size: 1.5em;
+          }
+        }
+      }
+      .info-display-img {
+        padding: 0 10% 3% 10%;
+        img {
+          width: 50%;
+          // height:90%;
+        }
+      }
+    }
+    .rf-container-3 {
+      padding-top: 10%;
+      .rf-sec-blk {
+        margin-bottom: 5%;
+      }
+    }
+    .rf-container-4 {
+      padding-top: 6%;
+      .rf-assure-txt {
+        padding-top: 2%;
+        p:first-of-type {
+          margin-top: 3%;
+        }
+        .assure-btn:hover {
+          background-color: get_bgcolor(rf_blue);
+          color: get_textcolor(rf_white);
+          border-radius: 0;
+        }
+      }
+    }
+    .rf-container-5 {
+      padding-left: 10%;
+      padding-right: 6%;
+      padding-top: 5%;
+      .contact-img {
+        display: block;
+        padding: 20% 7% 0 7%;
+      }
+      .contact-head-txt {
+        background-color: get_bgcolor(secondary);
+        padding: 30px;
+        border-radius: 20px 20px 0 0;
+        label {
+          textarea {
+            resize: none;
+          }
+        }
+      }
+    }
+  }
+}

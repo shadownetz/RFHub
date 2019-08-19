@@ -1,0 +1,416 @@
+@import "partialstyle.scss";
+.navigation {
+  background-color: get_bgcolor(rf_blue);
+  .rf-nav-blk {
+    .navigation-list-block {
+      li {
+        a {
+          color: get_textcolor(rf_white);
+        }
+      }
+    }
+  }
+  .rf-nav-btn-blk {
+    .rw {
+      .b {
+        a.btn-outline-dark {
+          border-color: get_bgcolor(secondary);
+          color: get_textcolor(rf_white);
+        }
+        a.btn-outline-dark:hover {
+          color: get_textcolor(primary);
+          background-color: get_bgcolor(secondary);
+        }
+      }
+    }
+  }
+}
+.navigation.sticky {
+  background-color: get_bgcolor(secondary);
+  .rf-nav-blk {
+    .navigation-list-block {
+      li {
+        a {
+          color: get_textcolor(primary);
+        }
+      }
+    }
+  }
+  .rf-nav-btn-blk {
+    .rw {
+      .b {
+        a.btn-outline-dark {
+          border-color: get_bgcolor(rf_blue);
+          color: get_textcolor(primary);
+        }
+        a.btn-outline-dark:hover {
+          color: get_textcolor(rf_white);
+          background-color: get_bgcolor(rf_blue);
+        }
+      }
+    }
+  }
+}
+.rf-page {
+  background-color: get_bgcolor(rf_blue);
+  margin-top: -10px;
+  overflow: hidden;
+  .rf-page-head {
+    @include mobile_320 {
+      min-height: 200px;
+      padding-top: 20%;
+      padding-bottom: 20%;
+      .h {
+        display: block;
+        h2 {
+          color: get_textcolor(rf_white);
+          font-weight: bold;
+          padding-bottom: 5%;
+        }
+      }
+      .h:before {
+        content: "";
+        position: absolute;
+        bottom: 45%;
+        left: 5%;
+        width: 20%;
+        border: 3px solid get_textcolor(secondary);
+      }
+      .p {
+        display: block;
+        // margin-top:7%;
+        p {
+          color: get_textcolor(rf_white);
+          padding-top: 20px;
+        }
+      }
+    }
+    @include desktop {
+      height: auto;
+      padding-top: 7%;
+      padding-bottom: 3%;
+      .h {
+        padding-left: 7%;
+        h2 {
+          font-size: 3em;
+          padding-bottom: 0px;
+        }
+      }
+      .h:before {
+        left: 8%;
+        width: 5%;
+        bottom: 40%;
+      }
+      .p {
+        padding-left: 7%;
+        p {
+          font-size: 1.7em;
+          padding-top: 30px;
+        }
+      }
+    }
+  }
+  .rf-price-head {
+    @include mobile_320 {
+      .h:before {
+        bottom: 55%;
+      }
+    }
+    @include desktop {
+      .h:before {
+        bottom: 45%;
+      }
+    }
+  }
+}
+.rf-section {
+  @include mobile_320 {
+    background-color: get_bgcolor(secondary);
+    overflow: hidden;
+    .sect-1 {
+      padding-top: 10%;
+      padding-bottom: 10%;
+      background: linear-gradient(get_bgcolor(secondary), get_bgcolor(secondary), get_bgcolor(primary));
+      h2 {
+        color: get_textcolor(primary);
+        font-weight: bold;
+        text-align: center;
+      }
+      .rf-secure-panel {
+        text-align: left;
+        padding-top: 30px;
+        .rf-secure-box {
+          padding: 20px;
+          border-radius: 5px;
+          background: get_bgcolor(secondary);
+          box-shadow: 1px 1px 1px rgb(218, 219, 223), -1px 1px 1px rgb(218, 219, 223);
+          margin-bottom: 20px;
+          a {
+            color: get_textcolor(primary);
+            font-size: 0.8em;
+            font-weight: bold;
+          }
+          a:hover {
+            text-decoration: none;
+          }
+          .txt {
+            color: rgb(137, 145, 170);
+            margin-top: 20px;
+          }
+        }
+      }
+      .rf-why-img {
+        padding-top: 40px;
+      }
+    }
+    .sect-2 {
+      @include mobile_320 {
+        padding-top: 15%;
+        .txt-overlay {
+          position: absolute;
+          top: 25%;
+          left: 25%;
+          color: get_textcolor(rf_white);
+          text-align: center;
+          h2 {
+            color: get_textcolor(rf_white);
+            font-weight: bold;
+            margin-top: 20px;
+          }
+        }
+        .inner-sect {
+          position: relative;
+          width: 100%;
+          height: 350px;
+          background-color: get_bgcolor(secondary);
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+          margin-top: 20px;
+          border-radius: 5px;
+          .carousel {
+            height: 100%;
+            .carousel-indicators {
+              li {
+                background-color: rgb(150, 150, 150);
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+              }
+              li.active {
+                background-color: get_textcolor(primary);
+              }
+            }
+            .carousel-inner {
+              height: 100%;
+              .carousel-item {
+                padding: 10% 5% 5% 5%;
+                text-align: center;
+                .rf-testimonial-text {
+                  color: rgb(137, 145, 170);
+                  font-size: 18px;
+                  font-weight: bold;
+                }
+                .carousel-caption {
+                  margin-bottom: -70px;
+                  font-weight: bold;
+                  p {
+                    color: rgb(52, 152, 219);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      @include desktop {
+        padding-top: 7%;
+        .txt-overlay {
+          text-align: left;
+          left: 10%;
+          top: 30%;
+        }
+        .inner-sect {
+          position: absolute;
+          right: 25%;
+          top: 10%;
+          .carousel {
+            .carousel-inner {
+              .rf-testimonial-text {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.rf-price-section {
+  .sect-1 {
+    @include mobile_320 {
+      padding-top: 20%;
+      h1 {
+        font-size: 2em;
+        text-align: center;
+        font-weight: bold;
+      }
+      .inner-sect-1 {
+        .in-txt {
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.2em;
+          padding-top: 20px;
+          span {
+            color: get_textcolor(secondary);
+          }
+        }
+      }
+      .q {
+        // height: 200px;
+        .q-b {
+          height: 200px;
+          .q-1 {
+            @include mobile_320 {
+              position: absolute;
+              left: 10%;
+              width: 150px;
+              height: 150px;
+              background-color: get_bgcolor(rf_blue);
+              border-radius: 50%;
+              .txt-1 {
+                margin: 22%;
+                p:first-of-type {
+                  color: get_textcolor(rf_white);
+                  font-size: 2em;
+                  font-weight: bold;
+                  margin-bottom: 0;
+                }
+                p:not(:first-of-type) {
+                  color: get_textcolor(rf_white);
+                  font-size: 1.3em;
+                }
+              }
+            }
+          }
+          .q-1::after {
+            @include mobile_320 {
+              content: "";
+              position: absolute;
+              top: 98%;
+              left: 36%;
+              border-color: get_bgcolor(rf_blue) transparent transparent transparent;
+              border-width: 20px;
+              border-style: solid;
+            }
+          }
+          .q-2 {
+            @include mobile_320 {
+              position: absolute;
+              left: 10%;
+              width: 150px;
+              height: 150px;
+              background-color: get_bgcolor(secondary);
+              box-shadow: rgba(0, 0, 0, 0.1) 0px 15px 25px 0px;
+              border-radius: 50%;
+              .txt-2 {
+                margin: 22%;
+                p:first-of-type {
+                  color: get_textcolor(primary);
+                  font-size: 2em;
+                  font-weight: bold;
+                  margin-bottom: 0;
+                }
+                p:not(:first-of-type) {
+                  color: get_textcolor(primary);
+                  font-size: 1.1em;
+                }
+              }
+            }
+          }
+        }
+      }
+      .q-c {
+        @include mobile_320 {
+          .rf-bullet {
+            display: inline-block;
+            box-sizing: border-box;
+            margin-right: 6px;
+            .sm-img {
+              width: 17px;
+            }
+          }
+          p {
+            display: inline-block;
+            color: rgb(137, 145, 170);
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 2;
+          }
+        }
+      }
+    }
+    @include desktop {
+      padding-top: 10%;
+      .inner-sect-1 {
+        margin-bottom: 50px;
+      }
+    }
+  }
+  .sect-2 {
+    background: linear-gradient(get_bgcolor(secondary), get_bgcolor(secondary), get_bgcolor(primary));
+    @include mobile_320 {
+      padding-top: 10%;
+      .item-l {
+        margin-bottom: 20px;
+        h3 {
+          font-weight: bold;
+          font-size: 20px;
+        }
+        p {
+          font-size: 16px;
+          color: rgb(137, 145, 170);
+          line-height: 2;
+        }
+      }
+    }
+  }
+  .sect-3 {
+    @include mobile_320 {
+      background-color: get_bgcolor(secondary);
+      margin-top: 30px;
+      padding-top: 20%;
+      .hd {
+        text-align: center;
+        font-weight: bold;
+      }
+      .rf-secure-panel {
+        text-align: left;
+        margin-top: 40px;
+        .rf-secure-box {
+          padding: 20px;
+          // border-radius: 5px;
+          border-top: 1px solid rgb(224, 230, 237);
+          border-bottom: 1px solid rgb(224, 230, 237);
+          background: get_bgcolor(secondary);
+          // box-shadow: 1px 1px 1px rgb(218, 219, 223), -1px 1px 1px rgb(218, 219, 223);
+          padding-bottom: 20px;
+          a {
+            color: get_textcolor(primary);
+            font-size: 0.8em;
+            font-weight: bold;
+          }
+          a:hover {
+            text-decoration: none;
+          }
+          .txt {
+            color: rgb(137, 145, 170);
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    @include desktop{
+      padding-top:5%;
+      padding:10%;
+    }
+  }
+}

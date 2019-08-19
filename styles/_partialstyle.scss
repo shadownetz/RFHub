@@ -1,0 +1,279 @@
+$bg-colors: (
+  primary: #f0f1f6,
+  secondary: rgb(250, 250, 250),
+  rf_blue: #0d2143
+);
+$text-colors: (
+  primary: #0d2143,
+  secondary: #5fade1,
+  rf_white: rgb(250, 250, 250)
+);
+$nav-height: 80px;
+$mobile-320_width: 320px;
+$desktop_width: 1024px;
+
+@function get_bgcolor($name) {
+  @return map-get($bg-colors, $name);
+}
+@function get_textcolor($name) {
+  @return map-get($text-colors, $name);
+}
+
+@mixin mobile_320 {
+  @media (min-width:#{$mobile-320_width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width:#{$desktop_width}) {
+    @content;
+  }
+}
+
+@mixin rf_default_button() {
+  border: 2px solid get_bgcolor(rf_blue);
+  font-weight: bold;
+  color: get_textcolor(primary);
+}
+
+@font-face {
+  font-family: "van_helsingregular";
+  src: url("fonts/Van_Helsing/van_helsing-webfont.ttf") format("ttf"),
+    url("fonts/Van_Helsing/van_helsing-webfont.woff2") format("woff2"),
+    url("fonts/Van_Helsing/van_helsing-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat";
+  src: url("fonts/montserrat/montserrat-regular-webfont.ttf") format("ttf"),
+    url("fonts/montserrat/montserrat-regular-webfont.woff") format("woff"),
+    url("fonts/montserrat/montserrat-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: montserrat, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: get_textcolor(primary);
+}
+
+.loader {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: get_bgcolor(primary) url("../loader.gif") center fixed no-repeat;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.rf-logo{
+  @include mobile_320{
+    width:200px;padding-top:20px
+  }
+  @include desktop{
+    padding-top:30px;
+  }
+}
+.navigation {
+  background-color: get_bgcolor(primary);
+  width: 100%;
+  top: 0;
+  height: $nav-height;
+  transition: all .5s ease;
+  @include mobile_320 {
+    height: $nav-height - 10;
+  }
+  @include desktop {
+    height: $nav-height + 5;
+  }
+  .rf-nav-blk {
+    @include mobile_320 {
+      display: none;
+    }
+    @include desktop {
+      display: block;
+      .navigation-list-block {
+        list-style-type: none;
+        padding-top: 6%;
+        li {
+          float: left;
+          padding: 0 10px 0 20px;
+          a {
+            color: get_textcolor(primary);
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+          a:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .rf-nav-btn-blk {
+    @include mobile_320 {
+      display: none;
+    }
+    @include desktop {
+      display: block;
+      padding-top: 2%;
+      .rw {
+        padding-right: 10%;
+        .b {
+          a {
+            padding: 10px;
+            border-radius: 0;
+          }
+          a.btn-outline-dark {
+            @include rf_default_button();
+          }
+          a.btn-outline-dark:hover {
+            color: get_textcolor(rf_white);
+            background-color: get_bgcolor(rf_blue);
+          }
+        }
+      }
+    }
+  }
+  .nav-responsive-btn {
+    @include mobile_320 {
+      display: inline-block;
+      text-align: right;
+      height: 100%;
+      width: 20%;
+      float: right;
+      padding-top: 5%;
+      button {
+        background-color: get_bgcolor(secondary);
+      }
+      button:focus {
+        box-shadow: none !important;
+      }
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+}
+.navigation.sticky {
+  background-color: get_textcolor(rf_white);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.overlay-responsive {
+  @include mobile_320 {
+    position: fixed;
+    display: none;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    .navigation-responsive {
+      @include mobile_320 {
+        display: none;
+        position: fixed;
+        height: 100%;
+        right: 0;
+        top: 0;
+        width: 80%;
+        background-color: #0d2143;
+        .nav-ctl-btn {
+          padding-top: 20px;
+          padding-right: 20px;
+          height: 70px;
+          button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            float: right;
+            background-color: rgb(61, 77, 104);
+            color: get_textcolor(rf_white);
+          }
+        }
+        .nav-responsive-items {
+          p {
+            text-transform: uppercase;
+            color: get_textcolor(rf_white);
+            font-weight: bold;
+            margin-bottom: 30px;
+            padding-left: 10px;
+          }
+          p:first-child {
+            margin-top: 20px;
+          }
+        }
+        .nav-link-up {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: auto;
+          a {
+            color: get_textcolor(rf_white);
+            display: block;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-width: 2px;
+            font-weight: bold;
+          }
+          a.btn-outline-secondary {
+            border-color: get_textcolor(rf_white);
+          }
+        }
+      }
+    }
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.rf-foot {
+    @include mobile_320 {
+      background-color: get_bgcolor(rf_blue);
+      padding-top: 40px;
+      padding-left: 70px;
+      padding-right: 70px;
+      bottom: 0;
+      .block {
+        padding-top: 10px;
+        h5,
+        a,
+        .rf-about-alt {
+          color: get_textcolor(rf_white);
+        }
+        p {
+          color: rgb(86, 100, 123);
+        }
+      }
+      .block:not(last-child) {
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.4);
+      }
+      .block:last-child {
+        margin-top: 10px;
+      }
+    }
+    @include desktop {
+      .block {
+        .rf-about-alt:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }

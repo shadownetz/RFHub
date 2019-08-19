@@ -1,0 +1,153 @@
+$bg-colors: (
+  primary: #f0f1f6,
+  secondary: rgb(250, 250, 250),
+  rf_blue: #0d2143
+);
+$text-colors: (
+  primary: #0d2143,
+  secondary: #5fade1,
+  rf_white: rgb(250, 250, 250)
+);
+$mobile-320_width: 320px;
+$desktop_width: 1024px;
+
+@function get_bgcolor($name) {
+  @return map-get($bg-colors, $name);
+}
+@function get_textcolor($name) {
+  @return map-get($text-colors, $name);
+}
+
+@mixin mobile_320 {
+  @media (min-width:#{$mobile-320_width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width:#{$desktop_width}) {
+    @content;
+  }
+}
+@mixin rf_default_button() {
+  border: 2px solid get_bgcolor(rf_blue);
+  font-weight: bold;
+  color: get_textcolor(primary);
+}
+@font-face {
+  font-family: "van_helsingregular";
+  src: url("fonts/Van_Helsing/van_helsing-webfont.ttf") format("ttf"),
+    url("fonts/Van_Helsing/van_helsing-webfont.woff2") format("woff2"),
+    url("fonts/Van_Helsing/van_helsing-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "montserrat";
+  src: url("fonts/montserrat/montserrat-regular-webfont.ttf") format("ttf"),
+    url("fonts/montserrat/montserrat-regular-webfont.woff") format("woff"),
+    url("fonts/montserrat/montserrat-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: montserrat, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: get_textcolor(primary);
+}
+.loader {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: get_bgcolor(primary) url("../loader.gif") center fixed no-repeat;
+}
+
+.rf-signup {
+  @include mobile_320 {
+    .block-1 {
+      min-height: 650px;
+      background: url("../images/signup_bg.jpg") center center no-repeat;
+      background-size: cover;
+      .signup-block {
+        background-color: get_bgcolor(secondary);
+        margin: 20% 0;
+        border-radius: 5px;
+        .logo-blk {
+          padding:10% 5%;
+          .rf-logo-signup {
+            width: 80%;
+          }
+        }
+        .form-fields {
+          padding-bottom:10%;
+          label {
+            width: 100%;
+            color: get_textcolor(primary);
+            margin-bottom:20px;
+            input{
+              border-radius: 0;
+              height:50px;
+            }
+            input:focus{
+              border: 1px solid get_bgcolor(rf_blue);
+              box-shadow: none;
+            }
+          }
+          button{
+            border-radius: 0
+          }
+          button.btn-outline-secondary{
+            @include rf_default_button();
+          }
+          button.btn-outline-secondary:hover{
+            background-color: get_bgcolor(rf_blue);
+            color: get_textcolor(rf_white);
+          }
+        }
+      }
+      .signup-block.rf-login{
+        margin-top:35%;
+      }
+    }
+    .block-1.rf-login-alt{
+      background-image: url("../images/login-bg.jpg");
+    }
+    .block-2 {
+      display: none;
+    }
+  }
+  @include desktop{
+    .block-1{
+      min-height: 600px;
+      .signup-block{
+        margin-top:10%;
+        margin-left:70%;
+        z-index: 2;
+      }
+      .signup-block.rf-login{
+        margin-top:10%;
+      }
+    }
+    .block-1.fp{
+      min-height: 650px!important;
+    }
+    .block-1.fp .signup-block.rf-login{
+      margin-top:20%;
+    }
+    .block-2{
+      display:block;
+      background-color: get_bgcolor(rf_blue);
+
+    }
+  }
+}
